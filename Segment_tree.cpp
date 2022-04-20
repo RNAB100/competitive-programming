@@ -59,6 +59,19 @@ void built_tree(ll si,ll ss,ll se) //segment idx,start,end
   built_tree(2*si+1,mid+1,se);
   st[si]=min(st[2*si],st[2*si+1]);
 }
+void update(ll si, ll ss, ll se, ll pos, ll new_val) { //segment idx,start,end
+    if (ss==se) {
+        st[si] = new_val;
+    } 
+    else {
+        ll mid=(ss+se)/2;
+        if (pos <= mid)
+            update(si*2, ss, mid, pos, new_val);
+        else
+            update(si*2+1, mid+1, se, pos, new_val);
+        st[si] = min(st[si*2] , st[si*2+1]);
+    }
+}
 ll query(ll si,ll ss,ll se,ll qs,ll qe)
 {
   if(qs>se||qe<ss) return INF;//completely outside
