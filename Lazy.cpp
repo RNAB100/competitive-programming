@@ -70,9 +70,9 @@ void update(ll si, ll ss, ll se, ll qs, ll qe, ll val) { //segment idx,start,end
 		lazy[si] = 0;
 	}
 	if(qs > se || qe < ss) return;
-    else if(ss >= qs && se <= qe) {
-    	st[si] += val*(se-ss+1);
-    	if(ss != se){
+   	 else if(ss >= qs && se <= qe) {
+    		st[si] += val*(se-ss+1);
+    		if(ss != se){
 			lazy[2*si] += val;
 			lazy[2*si+1] += val;
 		}
