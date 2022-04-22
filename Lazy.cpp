@@ -76,13 +76,13 @@ void update(ll si, ll ss, ll se, ll qs, ll qe, ll val) { //segment idx,start,end
 			lazy[2*si] += val;
 			lazy[2*si+1] += val;
 		}
-    }
-    else {
-        ll mid=(ss+se)/2;
-        update(si*2, ss, mid, qs, qe, val);
-        update(si*2+1, mid+1, se, qs, qe, val);
-        st[si] = st[si*2] + st[si*2+1];
-    }
+    	}
+        else {
+		ll mid=(ss+se)/2;
+		update(si*2, ss, mid, qs, qe, val);
+		update(si*2+1, mid+1, se, qs, qe, val);
+		st[si] = st[si*2] + st[si*2+1];
+    	}
 }
 ll query(ll si, ll ss, ll se, ll qs, ll qe)
 {
