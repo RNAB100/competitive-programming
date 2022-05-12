@@ -22,7 +22,7 @@ void solve() {
 		ara[par].push_back(i);
 	}
 	tree_dfs(1);
-  for (i = 1; i <= n; i++) ara[i].clear();
+  	for (i = 1; i <= n; i++) ara[i].clear();
 	return;
 }
 int main() {
